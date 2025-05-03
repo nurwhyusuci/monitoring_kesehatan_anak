@@ -8,7 +8,6 @@ Proyek ini merupakan sistem informasi untuk memantau kesehatan anak usia dini, k
 - Mempermudah komunikasi antara guru dan sistem melalui notifikasi otomatis.
 
 ## 🧩 Fitur Utama
-Berikut daftar fitur utama yang dibangun dalam proyek ini:
 
 - **Autentikasi & Akses**
   - Registrasi Pengguna Baru
@@ -36,15 +35,43 @@ Berikut daftar fitur utama yang dibangun dalam proyek ini:
 | **C2**   | - Login & Logout<br>- Menambahkan Guru ke Program<br>- Pencatatan Data Kesehatan Gigi<br>- Dashboard Statistik Kesehatan Anak |
 | **C3**   | - Manajemen Role<br>- Sistem Notifikasi Otomatis<br>- Pembuatan Program Monitoring Kesehatan<br>- Pencatatan Data Vaksinasi |
 
-## 🛠️ Teknologi yang Digunakan
-- **Frontend**: (ditentukan oleh tim)
-- **Backend**: (misalnya: Node.js, Express, Laravel, dll.)
-- **Database**: MySQL / MongoDB
-- **Tools Pendukung**: Git, Postman, Figma, dsb.
+## 👨‍💻 Tim Pengembang
 
-## 📦 Cara Menjalankan Proyek (Contoh)
-```bash
-git clone https://github.com/nama-repo/monitoring-kesehatan-anak.git
-cd monitoring-kesehatan-anak
-npm install
-npm run dev
+### Project Manager
+- **Nur Wahyu Suci Rahayu**
+
+### Kelompok C1
+1. Adam Bimantara – 2300016021  
+2. M. Nabil Niode – 2300016109  
+3. Veri Riswanto – 2200016052  
+4. Heltri Zulfikar – 2200016089  
+
+### Kelompok C2
+1. M. Syukron – 2300016065  
+2. Eki Riswan Nawawi  
+3. Annas Fatihur Rahman  
+4. Adelia Rahma Saputri – 2300016054  
+5. Elok Widiarti – 2200016049  
+
+### Kelompok C3
+1. Adri Ihwan Hidayah – 2300016108  
+2. Fauzan Budi Attala – 2200016036  
+3. Oba Ilo Takbir – 2200016059  
+4. M. Zhaqy Wilson – 2300016130  
+5. Finaz Rama Arhan Carni – 2200016123  
+
+## 🛠️ Teknologi yang Digunakan
+- **Frontend**: 
+- **Backend**: 
+- **Database**: 
+- **Integrasi GitLab**: Webhook, API Token
+- **Autentikasi**: JWT (JSON Web Token)
+- **Deployment**: 
+
+## 📌 Status Proyek
+🟢 **Sedang Berlangsung**  
+Proyek ini masih dalam tahap pengembangan aktif oleh mahasiswa Program Studi Sistem Informasi. Setiap kelompok bertanggung jawab atas modul masing-masing dan saat ini sedang mengimplementasikan serta menguji fungsionalitas utama sistem.
+
+📄 Lisensi
+© 2025 - Program Studi Sistem Informasi
+Proyek ini dikembangkan untuk tujuan pembelajaran dan pengabdian masyarakat.
