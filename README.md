@@ -1,57 +1,50 @@
-# 🩺 Monitoring Kesehatan Anak
+# 📊 Monitoring Kesehatan Anak
 
-**Monitoring Kesehatan Anak** adalah aplikasi berbasis web yang dirancang untuk membantu sekolah dan orang tua dalam memantau kondisi kesehatan siswa secara berkala. Sistem ini mendukung peran multi-user seperti guru, orang tua, dan admin, serta menyediakan berbagai fitur yang mencakup pencatatan data kesehatan, statistik visual, dan pengingat otomatis.
+Proyek ini merupakan sistem informasi untuk memantau kesehatan anak usia dini, khususnya di lingkungan sekolah. Sistem ini dirancang untuk membantu guru dan tenaga kesehatan dalam mencatat data kesehatan anak, memonitor perkembangan, serta menghasilkan laporan terintegrasi.
 
----
+## 🚀 Tujuan
+- Memfasilitasi pencatatan kesehatan siswa seperti data antropometri, kesehatan gigi, dan vaksinasi.
+- Memberikan informasi visual berupa dashboard perkembangan siswa.
+- Mempermudah komunikasi antara guru dan sistem melalui notifikasi otomatis.
 
-## 🚀 Fitur Utama
+## 🧩 Fitur Utama
+Berikut daftar fitur utama yang dibangun dalam proyek ini:
 
-### 📌 Kelompok C1
-- **Registrasi Pengguna Baru**: Pendaftaran pengguna berdasarkan peran (guru, orang tua, admin).
-- **Login & Logout**: Sistem autentikasi pengguna.
-- **Manajemen Role**: Pengaturan hak akses berdasarkan jenis pengguna.
-- **Sistem Notifikasi Otomatis**: Pengingat untuk pengisian data, jadwal vaksinasi, dan lainnya.
+- **Autentikasi & Akses**
+  - Registrasi Pengguna Baru
+  - Login & Logout
+  - Manajemen Role
+  - Sistem Notifikasi Otomatis
 
-### 📌 Kelompok C2
-- **Manajemen Data Siswa**: Input dan pengelolaan data siswa.
-- **Pembuatan Program Monitoring Kesehatan**: Menyusun program pemantauan sesuai periode waktu tertentu.
-- **Penugasan Guru ke Program**: Menetapkan guru sebagai penanggung jawab tiap program monitoring.
-- **Dashboard Statistik Kesehatan Anak**: Visualisasi data kesehatan dalam bentuk grafik dan statistik.
+- **Manajemen Program**
+  - Manajemen Data Siswa
+  - Pembuatan Program Monitoring Kesehatan
+  - Menambahkan Guru ke Program
+  - Dashboard Statistik Kesehatan Anak
 
-### 📌 Kelompok C3
-- **Pencatatan Data Antropometri & Mata**: Mencatat tinggi badan, berat badan, dan pemeriksaan mata siswa.
-- **Pencatatan Data Kesehatan Gigi**: Input hasil pemeriksaan gigi siswa.
-- **Pencatatan Data Vaksinasi**: Catatan status dan riwayat vaksinasi siswa.
-- **Ekspor Data & Laporan**: Fitur ekspor data ke dalam format PDF atau Excel untuk laporan resmi.
+- **Pencatatan Kesehatan**
+  - Data Antropometri & Mata
+  - Kesehatan Gigi
+  - Data Vaksinasi
+  - Ekspor Data & Laporan
 
----
+## 👥 Pembagian Fitur per Kelompok
 
-## 👥 Tim Pengembang
+| Kelompok | Fitur yang Dikerjakan |
+|----------|------------------------|
+| **C1**   | - Registrasi Pengguna Baru<br>- Manajemen Data Siswa<br>- Pencatatan Data Antropometri & Mata<br>- Ekspor Data & Laporan |
+| **C2**   | - Login & Logout<br>- Menambahkan Guru ke Program<br>- Pencatatan Data Kesehatan Gigi<br>- Dashboard Statistik Kesehatan Anak |
+| **C3**   | - Manajemen Role<br>- Sistem Notifikasi Otomatis<br>- Pembuatan Program Monitoring Kesehatan<br>- Pencatatan Data Vaksinasi |
 
-### Kelompok C1
-- *(Isi nama anggota kelompok C1 di sini)*
+## 🛠️ Teknologi yang Digunakan
+- **Frontend**: (ditentukan oleh tim)
+- **Backend**: (misalnya: Node.js, Express, Laravel, dll.)
+- **Database**: MySQL / MongoDB
+- **Tools Pendukung**: Git, Postman, Figma, dsb.
 
-### Kelompok C2
-- *(Isi nama anggota kelompok C2 di sini)*
-
-### Kelompok C3
-- *(Isi nama anggota kelompok C3 di sini)*
-
-### 👨‍💼 Project Manager
-**[Masukkan Nama Kamu di Sini]**
-
----
-
-## 🛠 Teknologi yang Digunakan
-
-- **Frontend**: React.js / Vue.js *(disarankan)*
-- **Backend**: Node.js / Express
-- **Database**: MongoDB / MySQL
-- **Autentikasi**: JWT
-- **Ekspor Laporan**: PDFKit / SheetJS
-
----
-
-## 📄 Lisensi
-© 2025 - Program Studi Sistem Informasi. Proyek ini dikembangkan untuk tujuan pembelajaran dan pengabdian masyarakat.
-
+## 📦 Cara Menjalankan Proyek (Contoh)
+```bash
+git clone https://github.com/nama-repo/monitoring-kesehatan-anak.git
+cd monitoring-kesehatan-anak
+npm install
+npm run dev
