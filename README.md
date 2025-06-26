@@ -1,77 +1,70 @@
-# 📊 Monitoring Kesehatan Anak
+# Getting Started with Create React App
 
-Proyek ini merupakan sistem informasi untuk memantau kesehatan anak usia dini, khususnya di lingkungan sekolah. Sistem ini dirancang untuk membantu guru dan tenaga kesehatan dalam mencatat data kesehatan anak, memonitor perkembangan, serta menghasilkan laporan terintegrasi.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🚀 Tujuan
-- Memfasilitasi pencatatan kesehatan siswa seperti data antropometri, kesehatan gigi, dan vaksinasi.
-- Memberikan informasi visual berupa dashboard perkembangan siswa.
-- Mempermudah komunikasi antara guru dan sistem melalui notifikasi otomatis.
+## Available Scripts
 
-## 🧩 Fitur Utama
+In the project directory, you can run:
 
-- **Autentikasi & Akses**
-  - Registrasi Pengguna Baru
-  - Login & Logout
-  - Manajemen Role
-  - Sistem Notifikasi Otomatis
+### `npm start`
 
-- **Manajemen Program**
-  - Manajemen Data Siswa
-  - Pembuatan Program Monitoring Kesehatan
-  - Menambahkan Guru ke Program
-  - Dashboard Statistik Kesehatan Anak
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- **Pencatatan Kesehatan**
-  - Data Antropometri & Mata
-  - Kesehatan Gigi
-  - Data Vaksinasi
-  - Ekspor Data & Laporan
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 👥 Pembagian Fitur per Kelompok
+### `npm test`
 
-| Kelompok | Fitur yang Dikerjakan |
-|----------|------------------------|
-| **C1**   | - Registrasi Pengguna Baru<br>- Manajemen Data Siswa<br>- Pencatatan Data Antropometri & Mata<br>- Ekspor Data & Laporan |
-| **C2**   | - Login & Logout<br>- Menambahkan Guru ke Program<br>- Pencatatan Data Kesehatan Gigi<br>- Dashboard Statistik Kesehatan Anak |
-| **C3**   | - Manajemen Role<br>- Sistem Notifikasi Otomatis<br>- Pembuatan Program Monitoring Kesehatan<br>- Pencatatan Data Vaksinasi |
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 👨‍💻 Tim Pengembang
+### `npm run build`
 
-### Project Manager
-- **Nur Wahyu Suci Rahayu**
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Kelompok C1
-1. Adam Bimantara – 2300016021  
-2. M. Nabil Niode – 2300016109  
-3. Veri Riswanto – 2200016052  
-4. Heltri Zulfikar – 2200016089  
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Kelompok C2
-1. M. Syukron – 2300016065  
-2. Eki Riswan Nawawi  
-3. Annas Fatihur Rahman  
-4. Adelia Rahma Saputri – 2300016054  
-5. Elok Widiarti – 2200016049  
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Kelompok C3
-1. Adri Ihwan Hidayah – 2300016108  
-2. Fauzan Budi Attala – 2200016036  
-3. Oba Ilo Takbir – 2200016059  
-4. M. Zhaqy Wilson – 2300016130  
-5. Finaz Rama Arhan Carni – 2200016123  
+### `npm run eject`
 
-## 🛠️ Teknologi yang Digunakan
-- **Frontend**: 
-- **Backend**: 
-- **Database**: 
-- **Integrasi GitLab**: Webhook, API Token
-- **Autentikasi**: JWT (JSON Web Token)
-- **Deployment**: 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## 📌 Status Proyek
-🟢 **Sedang Berlangsung**  
-Proyek ini masih dalam tahap pengembangan aktif oleh mahasiswa Program Studi Sistem Informasi. Setiap kelompok bertanggung jawab atas modul masing-masing dan saat ini sedang mengimplementasikan serta menguji fungsionalitas utama sistem.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-📄 Lisensi
-© 2025 - Program Studi Sistem Informasi
-Proyek ini dikembangkan untuk tujuan pembelajaran dan pengabdian masyarakat.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
