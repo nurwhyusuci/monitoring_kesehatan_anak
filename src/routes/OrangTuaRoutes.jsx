@@ -4,11 +4,14 @@ import Dashboard from '../pages/orangTua/Dashboard';
 import DataMedisAnak from '../pages/orangTua/DataMedisAnak';
 import DataAnak from '../pages/orangTua/DataAnak';
 import CatatanDokter from '../pages/orangTua/CatatanDokter';
+import DetailKesehatan from '../pages/orangTua/DetailKesehatan';
 
 console.log('Dashboard:', Dashboard);
 console.log('DataMedisAnak:', DataMedisAnak);
 console.log('DataAnak:', DataAnak);
 console.log('CatatanDokter:', CatatanDokter);
+console.log('DetailKesehatan:', DetailKesehatan);
+
 
 
 const OrangTuaRoutes = () => {
@@ -21,6 +24,7 @@ const OrangTuaRoutes = () => {
           <Route path="data-medis" element={<DataMedisAnak />} />
           <Route path="data-anak" element={<DataAnak />} />
           <Route path="catatan-dokter" element={<CatatanDokter />} />
+          <Route path="detail-kesehatan" element={<DetailKesehatan />} /> {/* ✅ Tambahkan ini */}
         </Routes>
       </div>
     </div>
