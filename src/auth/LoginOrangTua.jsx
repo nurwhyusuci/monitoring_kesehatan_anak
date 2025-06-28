@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  FaUser,
   FaEnvelope,
   FaLock,
   FaGoogle,
@@ -9,7 +8,11 @@ import {
   FaApple,
 } from 'react-icons/fa';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import loginImage from '../assets/images/login-side.png';
+import users from '../data/users.json';
 
 const LoginOrangTua = () => {
   const [email, setEmail] = useState('');
@@ -17,10 +20,22 @@ const LoginOrangTua = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (email === '123456' && password === '123456') {
+    const user = users.find(
+      (u) => u.email === email && u.password === password && u.role === 'orangtua'
+    );
+
+    if (user) {
       navigate('/orangtua/dashboard');
     } else {
-      alert('Email atau password salah!');
+      toast.error('❌ Email atau password salah. Coba lagi ya!', {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: 'colored',
+      });
     }
   };
 
@@ -31,24 +46,14 @@ const LoginOrangTua = () => {
         <img
           src={loginImage}
           alt="Ilustrasi"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105 active:scale-95 cursor-pointer"
         />
       </div>
 
       {/* KANAN: Form Login */}
       <div className="w-full md:w-1/2 flex items-center justify-center bg-white py-10 px-4">
-        <div className="w-full max-w-md px-6 md:px-10 py-10 md:py-12 rounded-lg">
+        <div className="w-full max-w-md bg-white border border-gray-300 rounded-2xl shadow-lg px-6 md:px-10 py-10 md:py-12 transition-transform duration-500 hover:scale-105 active:scale-100">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">LOGIN</h2>
-
-          {/* Username */}
-          <div className="mb-5 relative">
-            <FaUser className="absolute top-3.5 left-4 text-gray-600" />
-            <input
-              type="text"
-              placeholder="Username"
-              className="pl-10 w-full bg-blue-200 border-none px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-          </div>
 
           {/* Email */}
           <div className="mb-5 relative">
@@ -103,6 +108,9 @@ const LoginOrangTua = () => {
           </div>
         </div>
       </div>
+
+      {/* Toast Container */}
+      <ToastContainer />
     </div>
   );
 };
