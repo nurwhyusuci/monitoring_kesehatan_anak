@@ -6,14 +6,6 @@ import DataAnak from '../pages/orangTua/DataAnak';
 import CatatanDokter from '../pages/orangTua/CatatanDokter';
 import DetailKesehatan from '../pages/orangTua/DetailKesehatan';
 
-console.log('Dashboard:', Dashboard);
-console.log('DataMedisAnak:', DataMedisAnak);
-console.log('DataAnak:', DataAnak);
-console.log('CatatanDokter:', CatatanDokter);
-console.log('DetailKesehatan:', DetailKesehatan);
-
-
-
 const OrangTuaRoutes = () => {
   return (
     <div className="flex min-h-screen">
@@ -22,9 +14,10 @@ const OrangTuaRoutes = () => {
         <Routes>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="data-medis" element={<DataMedisAnak />} />
+          <Route path="riwayat-lengkap" element={<DataMedisAnak />} /> {/* ✅ Tambahkan ini */}
           <Route path="data-anak" element={<DataAnak />} />
           <Route path="catatan-dokter" element={<CatatanDokter />} />
-          <Route path="detail-kesehatan" element={<DetailKesehatan />} /> {/* ✅ Tambahkan ini */}
+          <Route path="detail-kesehatan" element={<DetailKesehatan />} />
         </Routes>
       </div>
     </div>

@@ -43,12 +43,7 @@ const DetailKesehatan = () => {
             >
               Unduh Laporan PDF
             </button>
-            <button
-              onClick={() => navigate(-1)}
-              className="border border-gray-400 px-4 py-1 rounded hover:bg-gray-200"
-            >
-              Back
-            </button>
+           
           </div>
         </div>
 
