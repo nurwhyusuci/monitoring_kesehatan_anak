@@ -46,7 +46,7 @@ export default function InformasiDokter() {
         {doctors.map((doc) => (
           <div key={doc.id} className="bg-gray-200 rounded-md flex items-center justify-between px-6 py-4 shadow-md">
             <div className="flex items-center space-x-4">
-              <img src={doc.image} alt={doc.name} className="w-12 h-12 rounded-full object-cover" />
+              <img  src={doc.image} alt={doc.name} className="w-20 h-20 rounded-full object-cover object-top border border-white shadow" />
               <div>
                 <p className="font-bold text-lg">{doc.name}</p>
                 <p className="text-sm capitalize">{doc.specialization}</p>

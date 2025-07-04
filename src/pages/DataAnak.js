@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import dataDummy from '../dataAnak';
+import doctorImage from '../assets/doctor.png';
 
 const DataAnak = () => {
-  const [dataAnak, setDataAnak] = useState(dataDummy);
+  const [dataAnak] = useState(dataDummy);
   const navigate = useNavigate();
 
   const handleDetail = (anak) => {
@@ -12,16 +13,12 @@ const DataAnak = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-400 to-white font-sans p-4">
+    <>
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-white">Data Anak</h1>
         <div className="flex items-center gap-2">
-          <img src="/assets/doctor.png" alt="Admin" className="w-10 h-10 rounded-full" />
-          <div>
-            <p className="text-sm font-semibold text-white">admin</p>
-            <p className="text-sm text-gray-200">admin@bytelogic.id</p>
-          </div>
+          
         </div>
       </div>
 
@@ -33,7 +30,7 @@ const DataAnak = () => {
               <th className="px-6 py-3 font-semibold">Nama Anak</th>
               <th className="px-6 py-3 font-semibold">Kelas</th>
               <th className="px-6 py-3 font-semibold">Jenis Kelamin</th>
-              <th className="px-6 py-3 font-semibold text-center">Infomasi anak dan orang tua</th>
+              <th className="px-6 py-3 font-semibold text-center">Informasi anak dan orang tua</th>
             </tr>
           </thead>
           <tbody>
@@ -60,7 +57,7 @@ const DataAnak = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   );
 };
 
