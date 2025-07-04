@@ -9,16 +9,18 @@ import DataAnak from './pages/DataAnak';
 import DetailAnak from './pages/DetailAnak';
 import DetailOrangTua from './pages/DetailOrangTua';
 import DataRiwayatAnak from './pages/DataRiwayatAnak';
-import SaranDokter from './pages/SaranDokter';
+import FormSaranDokter from './pages/FormSaranDokter';
 import DetailSaranDokter from './pages/DetailSaranDokter';
 import InformasiDokter from './pages/InformasiDokter';
 import DetailDokter from './pages/DetailDokter';
 import DataAntropometri from './pages/DataAntropometri';
 import DetailAntropometri from './pages/DetailAntropometri';
 import RiwayatKesehatan from './pages/RiwayatKesehatan';
-import FormSaranDokter from './pages/FormSaranDokter';
 import CatatanDokter from './pages/CatatanDokter';
 import TambahCatatanDokter from './pages/TambahCatatanDokter';
+import Program from './pages/Program';
+import ProgramDetail from './pages/ProgramDetail';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   return (
@@ -42,6 +44,24 @@ const App = () => {
         <Route path="/detail-antropometri" element={<Layout><DetailAntropometri /></Layout>} />
         <Route path="/catatan-dokter" element={<Layout><CatatanDokter /></Layout>} />
         <Route path="/catatan-dokter/tambah" element={<Layout><TambahCatatanDokter /></Layout>} />
+
+        {/* Rute baru untuk Program */}
+        <Route
+          path="/program"
+          element={
+            <ProtectedRoute allowedRoles={['admin', 'dokter']}>
+              <Layout><Program /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/program/:id"
+          element={
+            <ProtectedRoute allowedRoles={['admin', 'dokter']}>
+              <Layout><ProgramDetail /></Layout>
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );

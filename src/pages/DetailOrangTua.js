@@ -1,6 +1,6 @@
-// src/pages/DetailOrangTua.js
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ibuImage from '../assets/ibu.png';
 
 const DetailOrangTua = () => {
   const location = useLocation();
@@ -36,7 +36,7 @@ const DetailOrangTua = () => {
         {/* Header Orang Tua */}
         <div className="flex items-center gap-6 mb-6">
           <img
-            src="/assets/ibu.png"
+            src={ibuImage}
             alt="Foto Orang Tua"
             className="w-24 h-32 rounded-full border-4 border-white object-cover"
           />
