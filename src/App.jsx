@@ -1,38 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import LoginPage from './pages/LoginPage';
 import SekolahDashboard from './pages/sekolah/SekolahDashboard';
-import OrangTuaDashboard from './pages/orangtua/OrangTuaDashboard';
-import DokterDashboard from './pages/dokter/DokterDashboard';
+import OrangTuaDashboard from './pages/orangtua/orangTua/OrangTuaDashboard';
+import DokterDashboard from './pages/dokter/Dokter/DokterDashboard';
 import ProtectedRoute from './routes/ProtectedRoute';
 
 function App() {
-  // Pastikan localStorage hanya dipakai di browser
-  let user = null;
-  let role = null;
+  const [user, setUser] = useState(null);
 
-  if (typeof window !== 'undefined') {
-    try {
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        user = JSON.parse(storedUser);
-        role = user?.role;
-      }
-    } catch (error) {
-      console.error('Gagal membaca localStorage:', error);
-      localStorage.removeItem('user');
-    }
-  }
+  useEffect(() => {
+    // Logout otomatis setiap kali aplikasi pertama kali dimuat
+    localStorage.removeItem('user');
+    setUser(null);
+  }, []);
+
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+  const role = storedUser?.role;
 
   return (
     <Router>
       <Routes>
-        {/* Root ("/") diarahkan ke login atau dashboard */}
+        {/* Root redirect ke login atau dashboard */}
         <Route
           path="/"
           element={
-            user ? (
+            storedUser ? (
               <Navigate to={`/dashboard/${role}`} replace />
             ) : (
               <Navigate to="/login" replace />
@@ -40,11 +34,11 @@ function App() {
           }
         />
 
-        {/* Halaman login */}
+        {/* Login Page */}
         <Route
           path="/login"
           element={
-            user ? (
+            storedUser ? (
               <Navigate to={`/dashboard/${role}`} replace />
             ) : (
               <LoginPage />
@@ -52,7 +46,7 @@ function App() {
           }
         />
 
-        {/* Dashboard sekolah */}
+        {/* Dashboard Sekolah */}
         <Route
           path="/dashboard/sekolah"
           element={
@@ -62,7 +56,7 @@ function App() {
           }
         />
 
-        {/* Dashboard orang tua */}
+        {/* Dashboard Orang Tua */}
         <Route
           path="/dashboard/orangtua"
           element={
@@ -72,7 +66,7 @@ function App() {
           }
         />
 
-        {/* Dashboard dokter */}
+        {/* Dashboard Dokter */}
         <Route
           path="/dashboard/dokter"
           element={
