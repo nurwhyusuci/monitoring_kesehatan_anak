@@ -1,15 +1,26 @@
 import { useEffect, useState } from 'react';
-import { FaUserMd, FaCalendarAlt, FaMapMarkerAlt, FaWeight, FaRulerVertical, FaThermometerHalf, FaNotesMedical, FaPrescriptionBottleAlt, FaClipboardList } from 'react-icons/fa';
-import { IoMdArrowRoundBack } from 'react-icons/io';
-import { useNavigate } from 'react-router-dom';
-import catatanDokterRaw from '../../data/dokter.json';
+import {
+  FaEye,
+  FaCheckCircle,
+  FaClipboardCheck,
+  FaArrowRight,
+  FaArrowLeft,
+} from 'react-icons/fa';
+import Sidebar from '../../components/Sidebar';
+import Navbar from '../../components/navbar';
+import ProfileDrawer from '../../components/Profil';
+import catatanDokterRaw from '../../data/medis.json';
 
 const CatatanDokter = () => {
   const [catatan, setCatatan] = useState([]);
-  const navigate = useNavigate();
+  const [selectedCatatan, setSelectedCatatan] = useState(null);
+  const [showProfile, setShowProfile] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   useEffect(() => {
-    setCatatan(catatanDokterRaw.default || catatanDokterRaw);
+    const data = catatanDokterRaw.default || catatanDokterRaw;
+    setCatatan(data);
   }, []);
 
   const formatDate = (dateString) => {
@@ -17,117 +28,144 @@ const CatatanDokter = () => {
     return new Date(dateString).toLocaleDateString('id-ID', options);
   };
 
+  const toggleSelesai = (index) => {
+    const actualIndex = (currentPage - 1) * itemsPerPage + index;
+    const updated = [...catatan];
+    updated[actualIndex].selesai = !updated[actualIndex].selesai;
+    setCatatan(updated);
+  };
+
+  const totalPages = Math.ceil(catatan.length / itemsPerPage);
+  const paginatedData = catatan.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-blue-300 to-blue-100 p-4 sm:p-6 md:p-8 lg:p-12">
-      <div className="max-w-screen-xl mx-auto">
-        {/* Header with back button */}
-        <div className="flex items-center mb-6">
-         
-          <h2 className="text-2xl md:text-3xl font-bold text-white">Catatan Dokter</h2>
-        </div>
+    <>
+      <Sidebar />
+      <Navbar onProfileClick={() => setShowProfile(true)} />
+      {showProfile && (
+        <ProfileDrawer
+          onClose={() => setShowProfile(false)}
+          onLogout={() => (window.location.href = '/')}
+        />
+      )}
 
-        {/* Main content */}
-        <div className="bg-white/90 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden">
-          {catatan.length > 0 ? (
-            catatan.map((item, index) => (
-              <div key={index} className="p-6 sm:p-8 border-b border-blue-200/50 last:border-b-0">
-                {/* Examination header */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-blue-500/10 p-3 rounded-full text-blue-600">
-                      <FaUserMd className="text-xl" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg text-gray-800">{item.dokter}</h3>
-                      <div className="flex items-center gap-1 text-blue-600">
-                        <FaMapMarkerAlt className="text-sm" />
-                        <span className="text-sm">{item.lokasi}</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-2 bg-blue-500/10 px-4 py-2 rounded-full text-blue-700">
-                    <FaCalendarAlt />
-                    <span className="font-medium">{formatDate(item.tanggal)}</span>
-                  </div>
-                </div>
+      <div className="ml-64 mt-2 p-6 min-h-screen bg-gradient-to-b from-blue-300 to-blue-100">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-6">📋 Catatan Dokter Bulanan</h2>
 
-                {/* Examination details */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                  {/* Physical examination */}
-                  <div className="bg-white p-5 rounded-lg border border-blue-200/50 shadow-sm">
-                    <div className="flex items-center gap-2 mb-3 text-blue-600">
-                      <FaClipboardList />
-                      <h4 className="font-bold">Pemeriksaan Fisik</h4>
-                    </div>
-                    <div className="space-y-3 text-gray-700">
-                      <div className="flex items-center gap-3">
-                        <FaWeight className="text-blue-500/70" />
-                        <span>Berat: <span className="font-medium">{item.berat} kg</span></span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <FaRulerVertical className="text-blue-500/70" />
-                        <span>Tinggi: <span className="font-medium">{item.tinggi} cm</span></span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <FaThermometerHalf className="text-blue-500/70" />
-                        <span>Suhu: <span className="font-medium">{item.suhu} °C</span></span>
-                      </div>
-                    </div>
-                  </div>
+          <div className="bg-white shadow-lg rounded-xl overflow-hidden">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-blue-600 text-white">
+                <tr>
+                  <th className="px-4 py-3">Tanggal</th>
+                  <th className="px-4 py-3">Pemeriksa</th>
+                  <th className="px-4 py-3">Catatan</th>
+                  <th className="px-4 py-3">Tindak Lanjut</th>
+                  <th className="px-4 py-3 text-center">Aksi</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-700">
+                {paginatedData.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="border-b hover:bg-blue-50 transition-colors"
+                  >
+                    <td className="px-4 py-3">{formatDate(item.tanggal)}</td>
+                    <td className="px-4 py-3">{item.pemeriksa}</td>
+                    <td className="px-4 py-3">{item.catatan_dokter}</td>
+                    <td className="px-4 py-3">
+                      <button
+                        onClick={() => toggleSelesai(index)}
+                        className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
+                          item.selesai
+                            ? 'bg-green-100 text-green-700'
+                            : 'bg-yellow-100 text-yellow-800'
+                        }`}
+                      >
+                        <FaClipboardCheck className="text-sm" />
+                        {item.selesai ? 'Selesai' : 'Belum'}
+                      </button>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <button
+                        onClick={() => setSelectedCatatan(item)}
+                        className="text-blue-600 hover:text-blue-800 mx-1"
+                        title="Lihat Detail"
+                      >
+                        <FaEye />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
-                  {/* General condition */}
-                  <div className="bg-white p-5 rounded-lg border border-blue-200/50 shadow-sm">
-                    <div className="flex items-center gap-2 mb-3 text-blue-600">
-                      <FaNotesMedical />
-                      <h4 className="font-bold">Kondisi Umum</h4>
-                    </div>
-                    <p className="text-gray-700">{item.kondisi_umum || 'Tidak ada catatan khusus'}</p>
-                  </div>
+            {/* Pagination */}
+            <div className="flex justify-between items-center p-4 bg-gray-100 text-sm">
+              <button
+                className={`flex items-center gap-2 px-4 py-2 rounded ${
+                  currentPage === 1
+                    ? 'bg-gray-300 cursor-not-allowed'
+                    : 'bg-blue-500 text-white hover:bg-blue-600'
+                }`}
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+              >
+                <FaArrowLeft /> Sebelumnya
+              </button>
+              <span>
+                Halaman {currentPage} dari {totalPages}
+              </span>
+              <button
+                className={`flex items-center gap-2 px-4 py-2 rounded ${
+                  currentPage === totalPages
+                    ? 'bg-gray-300 cursor-not-allowed'
+                    : 'bg-blue-500 text-white hover:bg-blue-600'
+                }`}
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
+                disabled={currentPage === totalPages}
+              >
+                Selanjutnya <FaArrowRight />
+              </button>
+            </div>
+          </div>
 
-                  {/* Diagnosis */}
-                  <div className="bg-white p-5 rounded-lg border border-blue-200/50 shadow-sm">
-                    <div className="flex items-center gap-2 mb-3 text-blue-600">
-                      <FaNotesMedical />
-                      <h4 className="font-bold">Diagnosis</h4>
-                    </div>
-                    <p className="text-gray-700">{item.diagnosa || 'Tidak ada diagnosis spesifik'}</p>
-                  </div>
-
-                  {/* Recommendations */}
-                  <div className="bg-white p-5 rounded-lg border border-blue-200/50 shadow-sm">
-                    <div className="flex items-center gap-2 mb-3 text-blue-600">
-                      <FaClipboardList />
-                      <h4 className="font-bold">Rekomendasi</h4>
-                    </div>
-                    <p className="text-gray-700">{item.anjuran || 'Tidak ada rekomendasi khusus'}</p>
-                  </div>
-
-                  {/* Prescription */}
-                  <div className="bg-white p-5 rounded-lg border border-blue-200/50 shadow-sm lg:col-span-2">
-                    <div className="flex items-center gap-2 mb-3 text-blue-600">
-                      <FaPrescriptionBottleAlt />
-                      <h4 className="font-bold">Resep Obat</h4>
-                    </div>
-                    {item.resep ? (
-                      <div className="bg-blue-50/50 p-4 rounded border border-blue-200/30">
-                        <pre className="whitespace-pre-wrap font-sans text-gray-700">{item.resep}</pre>
-                      </div>
-                    ) : (
-                      <p className="text-gray-500">Tidak ada resep obat</p>
-                    )}
-                  </div>
-                </div>
+          {/* Modal Detail */}
+          {selectedCatatan && (
+            <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+              <div className="bg-white rounded-lg shadow-lg p-6 max-w-xl w-full relative">
+                <button
+                  onClick={() => setSelectedCatatan(null)}
+                  className="absolute top-2 right-3 text-gray-500 hover:text-red-500"
+                >
+                  ✖
+                </button>
+                <h3 className="text-xl font-semibold mb-4">🩺 Detail Catatan Dokter</h3>
+                <p><strong>Pemeriksa:</strong> {selectedCatatan.pemeriksa}</p>
+                <p><strong>Tanggal:</strong> {formatDate(selectedCatatan.tanggal)}</p>
+                <hr className="my-3" />
+                <p><strong>Berat:</strong> {selectedCatatan.berat} kg</p>
+                <p><strong>Tinggi:</strong> {selectedCatatan.tinggi} cm</p>
+                <p><strong>Lingkar Kepala:</strong> {selectedCatatan.kepala} cm</p>
+                <p><strong>Suhu:</strong> {selectedCatatan.suhu} °C</p>
+                <p><strong>Status:</strong> {selectedCatatan.status}</p>
+                <p><strong>Ringkasan:</strong> {selectedCatatan.ringkasan}</p>
+                <p><strong>Catatan Dokter:</strong></p>
+                <pre className="bg-gray-100 p-2 rounded whitespace-pre-wrap">
+                  {selectedCatatan.catatan_dokter || '-'}
+                </pre>
+                <p className="mt-2"><strong>Status Tindak Lanjut:</strong> {selectedCatatan.selesai ? 'Selesai' : 'Belum'}</p>
               </div>
-            ))
-          ) : (
-            <div className="p-8 text-center text-gray-600">
-              Tidak ada catatan dokter tersedia
             </div>
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

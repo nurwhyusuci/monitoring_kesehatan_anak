@@ -1,5 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { FaTachometerAlt, FaNotesMedical, FaChild, FaStethoscope } from 'react-icons/fa';
+import {
+  FaTachometerAlt,
+  FaNotesMedical,
+  FaChild,
+  FaStethoscope,
+} from 'react-icons/fa';
+
+import logo from '../assets/images/logo.png';
 
 const Sidebar = () => {
   const menuItems = [
@@ -26,8 +33,12 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-64 min-h-screen sticky top-0 bg-gradient-to-b from-blue-400 to-blue-200 p-5 text-white">
-      <h1 className="text-2xl font-bold mb-8">🧑‍⚕️ MKA</h1>
+    <div className="fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-blue-400 to-blue-200 p-5 text-white shadow-lg z-50">
+      <img 
+        src={logo} 
+        alt="Logo MKA" 
+        className="w-42 h-auto mb-4" 
+      />
 
       <nav className="flex flex-col gap-4">
         {menuItems.map((item) => (
