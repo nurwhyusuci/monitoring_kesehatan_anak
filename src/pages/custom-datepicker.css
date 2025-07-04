@@ -1,0 +1,15 @@
+/* Membuat kalender react-datepicker tampil full-width */
+.react-datepicker {
+  width: 100% !important;
+}
+
+.react-datepicker__month-container {
+  width: 100% !important;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  width: 14.2% !important; /* 7 hari dalam seminggu */
+  line-height: 2.5rem;
+  font-size: 1rem;
+}

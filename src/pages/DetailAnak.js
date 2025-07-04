@@ -1,4 +1,3 @@
-// src/pages/DetailAnak.js
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -16,12 +15,12 @@ const DetailAnak = () => {
       <h2 className="text-4xl font-bold text-white mb-6 shadow-md">Detail Anak</h2>
 
       <div className="bg-blue-100 rounded-xl shadow-lg p-6 w-[90%] max-w-5xl mx-auto">
-        {/* Header Anak */}
+        {/* Header Anak dengan Gambar */}
         <div className="flex items-center gap-6 mb-6">
           <img
-            src="/assets/doctor.png"
-            alt="Anak"
-            className="w-20 h-20 rounded-full border-2 border-white shadow"
+            src={anak.image || '/assets/doctor.png'} // gunakan gambar anak jika ada, fallback ke default
+            alt="Foto Anak"
+            className="w-20 h-20 rounded-full border-2 border-white shadow object-cover"
           />
           <div>
             <h3 className="text-xl font-bold text-gray-800">{anak.nama}</h3>

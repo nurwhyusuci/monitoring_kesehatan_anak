@@ -1,14 +1,12 @@
-// src/components/Sidebar.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Ganti sesuai nama file, misalnya logo.png atau logo-mka.png
+import logo from '../assets/logo.png'; // Ganti sesuai nama file
 
 const Sidebar = () => {
   const location = useLocation();
 
   const menuItems = [
     { label: 'Dashboard', path: '/dashboard' },
-    { label: 'Data Medis Anak', path: '/data-riwayat-anak' },
     { label: 'Data Anak', path: '/data-anak' },
     { label: 'Data Riwayat Kesehatan anak', path: '/riwayat-kesehatan' },
     { label: 'Informasi Dokter', path: '/informasi-dokter' },
@@ -18,12 +16,12 @@ const Sidebar = () => {
 
   return (
     <div className="w-64 bg-blue-500 text-white p-4 min-h-screen">
-      {/* Logo besar tanpa frame */}
+      {/* Logo besar */}
       <div className="flex justify-center mb-4">
         <img
           src={logo}
           alt="Logo"
-          className="w-40 object-contain" // besar tanpa border atau bulatan
+          className="w-40 object-contain"
         />
       </div>
 
