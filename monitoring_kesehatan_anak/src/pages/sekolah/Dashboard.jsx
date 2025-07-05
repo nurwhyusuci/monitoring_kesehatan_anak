@@ -124,7 +124,7 @@ export const Dashboard = ({ onNavigate = () => {} }) => {
   return (
     <div className="space-y-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Dashboard</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">DASHBOARD</h1>
         <p className="text-gray-600">Selamat datang di Sistem Manajemen Kesehatan Sekolah MKA</p>
       </div>
 
