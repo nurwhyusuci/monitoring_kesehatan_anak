@@ -12,33 +12,29 @@ const Sidebar = () => {
   const menuItems = [
     {
       label: 'Dashboard',
-      to: '/orangtua/dashboard',
+      to: '/dashboard/orangtua/dashboard',
       icon: <FaTachometerAlt />,
     },
     {
       label: 'Data Medis Anak',
-      to: '/orangtua/data-medis',
+      to: '/dashboard/orangtua/data-medis',
       icon: <FaNotesMedical />,
     },
     {
       label: 'Data Anak',
-      to: '/orangtua/data-anak',
+      to: '/dashboard/orangtua/data-anak',
       icon: <FaChild />,
     },
     {
       label: 'Catatan Dokter',
-      to: '/orangtua/catatan-dokter',
+      to: '/dashboard/orangtua/catatan-dokter',
       icon: <FaStethoscope />,
     },
   ];
 
   return (
     <div className="fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-blue-400 to-blue-200 p-5 text-white shadow-lg z-50">
-      <img 
-        src={logo} 
-        alt="Logo MKA" 
-        className="w-42 h-auto mb-4" 
-      />
+      <img src={logo} alt="Logo MKA" className="w-42 h-auto mb-4" />
 
       <nav className="flex flex-col gap-4">
         {menuItems.map((item) => (

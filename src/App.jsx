@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import LoginPage from './pages/LoginPage';
 import SekolahDashboard from './pages/sekolah/SekolahDashboard';
-import OrangTuaDashboard from './pages/orangtua/orangTua/Dashboard';
+import OrangTuaRoutes from './routes/OrangTuaRoutes';
 import DokterDashboard from './pages/dokter/Dokter/DokterDashboard';
 import ProtectedRoute from './routes/ProtectedRoute';
 
@@ -11,7 +11,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Logout otomatis setiap kali aplikasi pertama kali dimuat
+    // Reset user saat app pertama kali dijalankan (opsional, bisa dihapus kalau tidak perlu logout otomatis)
     localStorage.removeItem('user');
     setUser(null);
   }, []);
@@ -19,15 +19,26 @@ function App() {
   const storedUser = JSON.parse(localStorage.getItem('user'));
   const role = storedUser?.role;
 
+  // Menentukan redirect berdasarkan role
+  const getDashboardRedirect = () => {
+    if (!role) return '/login';
+
+    if (role === 'orangtua') return '/dashboard/orangtua/dashboard';
+    if (role === 'sekolah') return '/dashboard/sekolah';
+    if (role === 'dokter') return '/dashboard/dokter';
+
+    return '/login';
+  };
+
   return (
     <Router>
       <Routes>
-        {/* Root redirect ke login atau dashboard */}
+        {/* Redirect root "/" */}
         <Route
           path="/"
           element={
             storedUser ? (
-              <Navigate to={`/dashboard/${role}`} replace />
+              <Navigate to={getDashboardRedirect()} replace />
             ) : (
               <Navigate to="/login" replace />
             )
@@ -39,7 +50,7 @@ function App() {
           path="/login"
           element={
             storedUser ? (
-              <Navigate to={`/dashboard/${role}`} replace />
+              <Navigate to={getDashboardRedirect()} replace />
             ) : (
               <LoginPage />
             )
@@ -56,12 +67,12 @@ function App() {
           }
         />
 
-        {/* Dashboard Orang Tua */}
+        {/* Dashboard Orang Tua (pakai wildcard) */}
         <Route
-          path="/dashboard/orangtua"
+          path="/dashboard/orangtua/*"
           element={
             <ProtectedRoute allowedRole="orangtua">
-              <OrangTuaDashboard />
+              <OrangTuaRoutes />
             </ProtectedRoute>
           }
         />
@@ -76,7 +87,7 @@ function App() {
           }
         />
 
-        {/* Fallback jika route tidak cocok */}
+        {/* Fallback 404 */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

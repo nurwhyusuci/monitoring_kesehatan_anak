@@ -5,7 +5,6 @@ import Sidebar from '../../../components/Sidebar';
 import Navbar from '../../../components/navbar';
 import ProfileDrawer from '../../../components/Profil'; 
 
-
 const Dashboard = () => {
   const [latest, setLatest] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
@@ -24,15 +23,16 @@ const Dashboard = () => {
   return (
     <>
       <Sidebar />
-      <Navbar onProfileClick={() => setShowProfile(true)}/>
+      <Navbar onProfileClick={() => setShowProfile(true)} />
+
       {showProfile && (
         <ProfileDrawer onClose={() => setShowProfile(false)} onLogout={handleLogout} />
       )}
 
       <div className="ml-64 mt-2 p-6 min-h-screen bg-gradient-to-b from-blue-300 to-blue-100 relative">
-        {/* Konten Utama */}
         <main className="space-y-6 w-full max-w-7xl mx-auto">
-          {/* Header Section */}
+
+          {/* Header */}
           <section className="flex flex-col lg:flex-row justify-between items-center bg-white p-6 rounded-xl shadow-md gap-6">
             <div className="text-center lg:text-left space-y-1">
               <h3 className="text-xl font-bold text-gray-800">🧒 Aisyah</h3>
@@ -46,7 +46,7 @@ const Dashboard = () => {
             </div>
 
             <button
-              onClick={() => navigate('/orangtua/detail-kesehatan')}
+              onClick={() => navigate('/dashboard/orangtua/detail-kesehatan')}
               className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm"
             >
               Lihat Detail Kesehatan
@@ -65,15 +65,10 @@ const Dashboard = () => {
             </div>
           </section>
 
-         {/* Ringkasan Riwayat Pemeriksaan */}
+          {/* Riwayat Pemeriksaan */}
           <section className="bg-white rounded-xl shadow overflow-hidden">
-            <div className="p-4 border-b border-gray-200 flex justify-between items-center">
+            <div className="p-4 border-b border-gray-200">
               <h4 className="text-lg font-semibold text-gray-800">Ringkasan Riwayat Pemeriksaan</h4>
-              <button
-                onClick={() => navigate('/orangtua/riwayat-lengkap')}
-                className="text-blue-600 hover:underline text-sm font-medium"
-              >
-              </button>
             </div>
 
             <div className="overflow-x-auto">
@@ -89,14 +84,14 @@ const Dashboard = () => {
                   {[...dataMedis.slice(-5)].reverse().map((item, index) => (
                     <tr
                       key={index}
-                      className={`$${
+                      className={`${
                         index % 2 === 0 ? 'bg-blue-50' : 'bg-white'
                       } hover:bg-blue-100 transition`}
                     >
                       <td className="p-3 border-b border-gray-100 whitespace-nowrap">{item.tanggal}</td>
                       <td className="p-3 border-b border-gray-100">
                         <span
-                          className={`px-2 py-1 rounded-full text-xs font-medium $${
+                          className={`px-2 py-1 rounded-full text-xs font-medium ${
                             item.status === 'Sehat'
                               ? 'bg-green-100 text-green-800'
                               : item.status === 'Perlu Perhatian'
