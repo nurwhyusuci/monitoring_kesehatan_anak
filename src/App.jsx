@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import LoginPage from './pages/LoginPage';
 import SekolahDashboard from './pages/sekolah/SekolahDashboard';
-import OrangTuaDashboard from './pages/orangtua/orangTua/Dashboard.jsx.jsx';
+import OrangTuaDashboard from './pages/orangtua/orangTua/Dashboard';
 import DokterDashboard from './pages/dokter/Dokter/DokterDashboard';
 import ProtectedRoute from './routes/ProtectedRoute';
 
