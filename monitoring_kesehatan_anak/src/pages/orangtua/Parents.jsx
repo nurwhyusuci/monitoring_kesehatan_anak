@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Search, Plus } from 'lucide-react';
-import { Table } from '../assets/components/UI/Table';
-import { Button } from '../assets/components/UI/Button';
-import { Modal } from '../assets/components/UI/Modal';
-import { AddParentForm } from '../assets/components/Forms/AddParentForm';
-import { EditParentForm } from '../assets/components/Forms/EditParentForm';
-import { ParentView } from '../assets/components/Views/ParentView';
-import { useData } from '../contexts/DataContext';
+import { Table } from '../../assets/components/UI/Table';
+import { Button } from '../../assets/components/UI/Button';
+import { Modal } from '../../assets/components/UI/Modal';
+import { AddParentForm } from '../../assets/components/Forms/AddParentForm';
+import { EditParentForm } from '../../assets/components/Forms/EditParentForm';
+import { ParentView } from '../../assets/Views/ParentView';
+import { useData } from '../../contexts/DataContext';
+
+
 
 export const Parents = () => {
   const [searchTerm, setSearchTerm] = useState('');

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../UI/Button';
+import { Button } from '../components/UI/Button';
 import { Download, User, Calendar, Stethoscope, Heart, Users } from 'lucide-react';
 import jsPDF from 'jspdf';
 

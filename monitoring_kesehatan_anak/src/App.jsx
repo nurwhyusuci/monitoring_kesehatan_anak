@@ -11,6 +11,13 @@ import { Dashboard } from './pages/sekolah/Dashboard';
 import OrangTuaDashboard from './pages/orangtua/OrangTuaDashboard';
 import DokterDashboard from './pages/dokter/DokterDashboard';
 
+import { Students } from './pages/sekolah/Students';
+import { Parents } from './pages/orangtua/Parents';
+import { Profile } from './pages/sekolah/Profile';
+import { FAQ } from './pages/sekolah/FAQ';
+
+import { Doctors } from './pages/dokter/Doctors';
+import { HealthRecords } from './pages/dokter/HealthRecords';
 import ProtectedRoute from './routes/ProtectedRoute';
 
 function AuthRoutesWrapper() {
@@ -91,6 +98,58 @@ function AuthRoutesWrapper() {
         element={
           <ProtectedRoute allowedRole="dokter">
             <DokterDashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Sekolah internal pages */}
+      <Route
+        path="/sekolah/siswa"
+        element={
+          <ProtectedRoute allowedRole="sekolah">
+            <Students />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/sekolah/orangtua"
+        element={
+          <ProtectedRoute allowedRole="sekolah">
+            <Parents />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/sekolah/profile"
+        element={
+          <ProtectedRoute allowedRole="sekolah">
+            <Profile />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/sekolah/faq"
+        element={
+          <ProtectedRoute allowedRole="sekolah">
+            <FAQ />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Dokter internal pages */}
+      <Route
+        path="/dokter/list"
+        element={
+          <ProtectedRoute allowedRole="dokter">
+            <Doctors />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dokter/rekam-medis"
+        element={
+          <ProtectedRoute allowedRole="dokter">
+            <HealthRecords />
           </ProtectedRoute>
         }
       />

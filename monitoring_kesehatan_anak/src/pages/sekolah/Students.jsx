@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Search, Plus } from 'lucide-react';
-import { Table } from '../assets/components/UI/Table';
-import { Button } from '../assets/components/UI/Button';
-import { Modal } from '../assets/components/UI/Modal';
-import { AddStudentForm } from '../assets/components/Forms/AddStudentForm';
-import { EditStudentForm } from '../assets/components/Forms/EditStudentForm';
-import { StudentView } from '../assets/components/Views/StudentView';
-import { useData } from '../contexts/DataContext';
+import { Table } from '../../assets/components/UI/Table';
+import { Button } from '../../assets/components/UI/Button';
+import { Modal } from '../../assets/components/UI/Modal';
+import { AddStudentForm } from '../../assets/components/Forms/AddStudentForm';
+import { EditStudentForm } from '../../assets/components/Forms/EditStudentForm';
+import { StudentView } from '../../assets/Views/StudentView';
+import { useData } from '../../contexts/DataContext';
 
 export const Students = () => {
   const [searchTerm, setSearchTerm] = useState('');

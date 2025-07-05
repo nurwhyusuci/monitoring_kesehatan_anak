@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Search, Plus } from 'lucide-react';
-import { Table } from '../assets/components/UI/Table';
-import { Button } from '../assets/components/UI/Button';
-import { Modal } from '../assets/components/UI/Modal';
-import { AddHealthRecordForm } from '../assets/components/Forms/AddHealthRecordForm';
-import { EditHealthRecordForm } from '../assets/components/Forms/EditHealthRecordForm';
-import { HealthRecordView } from '../assets/components/Views/HealthRecordView';
-import { useData } from '../contexts/DataContext';
+import { Table } from '../../assets/components/UI/Table';
+import { Button } from '../../assets/components/UI/Button';
+import { Modal } from '../../assets/components/UI/Modal';
+import { AddHealthRecordForm } from '../../assets/components/Forms/AddHealthRecordForm';
+import { EditHealthRecordForm } from '../../assets/components/Forms/EditHealthRecordForm';
+import { HealthRecordView } from '../../assets/Views/HealthRecordView';
+import { useData } from '../../contexts/DataContext';
+
 
 export const HealthRecords = () => {
   const [searchTerm, setSearchTerm] = useState('');

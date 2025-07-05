@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../UI/Button';
+import { Button } from '../components/UI/Button';
 import { User, Calendar, Phone, MapPin, Users, CreditCard as IdCard } from 'lucide-react';
 
 export const StudentView = ({ student, onClose }) => {
@@ -49,7 +49,10 @@ export const StudentView = ({ student, onClose }) => {
               <span className="text-gray-800">{student.gender || '-'}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600 font-medium">NIK:</span>
+              <span className="flex items-center gap-1 text-gray-600 font-medium">
+                <IdCard size={16} className="text-blue-600" />
+                NIK:
+              </span>
               <span className="text-gray-800">{student.nik || '-'}</span>
             </div>
             <div className="flex justify-between">
@@ -79,7 +82,10 @@ export const StudentView = ({ student, onClose }) => {
           </div>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-gray-600 font-medium">Kontak:</span>
+              <span className="flex items-center gap-1 text-gray-600 font-medium">
+                <Phone size={16} className="text-green-600" />
+                Kontak:
+              </span>
               <span className="text-gray-800">{student.parentPhone || '-'}</span>
             </div>
           </div>

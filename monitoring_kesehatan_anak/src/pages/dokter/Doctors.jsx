@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Search, Plus } from 'lucide-react';
 import { Card } from '../../assets/components/UI/Card';
-import { Button } from '../assets/components/UI/Button';
-import { Modal } from '../assets/components/UI/Modal';
-import { AddDoctorForm } from '../assets/components/Forms/AddDoctorForm';
-import { EditDoctorForm } from '../assets/components/Forms/EditDoctorForm';
-import { DoctorView } from '../assets/components/Views/DoctorView';
-import { useData } from '../assets/contexts/DataContext';
+import { Button } from '../../assets/components/UI/Button';
+import { Modal } from '../../assets/components/UI/Modal';
+import { AddDoctorForm } from '../../assets/components/Forms/AddDoctorForm';
+import { EditDoctorForm } from '../../assets/components/Forms/EditDoctorForm';
+import { DoctorView } from '../../assets/Views/DoctorView';
+import { useData } from '../../contexts/DataContext';
+
+
+
+
 
 export const Doctors = () => {
   const [searchTerm, setSearchTerm] = useState('');

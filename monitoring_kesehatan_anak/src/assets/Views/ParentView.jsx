@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../UI/Button';
+import { Button } from '../components/UI/Button';
 import { Users, Phone, Mail, MapPin, CreditCard as IdCard, Calendar } from 'lucide-react';
 
 export const ParentView = ({ parent, onClose }) => {

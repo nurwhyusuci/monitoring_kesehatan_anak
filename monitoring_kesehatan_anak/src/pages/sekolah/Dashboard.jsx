@@ -3,13 +3,13 @@ import { Card } from '../../assets/components/UI/Card';
 import { Modal } from '../../assets/components/UI/Modal';
 import { Button } from '../../assets/components/UI/Button';
 import { useData } from '../../contexts/DataContext';
-import { Users, Heart, Stethoscope, Calendar, TrendingUp, Activity, CheckCircle, BarChart3, Search, X } from 'lucide-react';
+import { Users, Heart, Stethoscope, Calendar, TrendingUp, Activity, CheckCircle, BarChart3, Search, } from 'lucide-react';
 
 export const Dashboard = ({ onNavigate }) => {
   const { students, healthRecords, doctors, parents } = useData();
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState({ title: '', data: [], searchTerm: '' });
-  const [searchTerm, setSearchTerm] = useState('');
+
 
   const dashboardStats = {
     studentsCount: students.length,
@@ -125,7 +125,7 @@ export const Dashboard = ({ onNavigate }) => {
     <div className="space-y-6">
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Dashboard</h1>
-        <p className="text-gray-600">Selamat datang di Sistem Manajemen Kesehatan Sekolah OMKA</p>
+        <p className="text-gray-600">Selamat datang di Sistem Manajemen Kesehatan Sekolah MKA</p>
       </div>
 
       {/* Enhanced Stats Cards with Different Designs */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Search, HelpCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { Card } from '../components/UI/Card';
+import { Card } from '../../assets/components/UI/Card';
+
 
 export const FAQ = () => {
   const [searchTerm, setSearchTerm] = useState('');

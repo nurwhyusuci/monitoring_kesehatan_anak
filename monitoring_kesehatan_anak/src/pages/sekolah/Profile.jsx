@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { User, Mail, Phone, MapPin, Calendar, Edit3, Save, X, Shield, Clock, Activity, Camera, Upload } from 'lucide-react';
-import { Card } from '../assets/components/UI/Card';
-import { Button } from '../assets/components/UI/Button';
-import { useAuth } from '../contexts/AuthContext';
-import { useData } from '../contexts/DataContext';
+import { Card } from '../../assets/components/UI/Card';
+import { Button } from '../../assets/components/UI/Button';
+import { useAuth } from '../../contexts/AuthContext';
+import { useData } from '../../contexts/DataContext';
 
 export const Profile = () => {
   const { user } = useAuth();
