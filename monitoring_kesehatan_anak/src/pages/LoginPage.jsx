@@ -12,7 +12,6 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  // Ketika masuk ke halaman login, logout otomatis (hapus data user)
   useEffect(() => {
     localStorage.removeItem('user');
   }, []);
@@ -88,9 +87,13 @@ const LoginPage = () => {
 
           {/* Forgot Password */}
           <div className="text-center mt-4">
-            <a href="#" className="text-sm text-blue-600 hover:underline">
+            <button
+              type="button"
+              onClick={() => toast.info('Fitur belum tersedia')}
+              className="text-sm text-blue-600 hover:underline bg-transparent border-none p-0"
+            >
               Forgot Password?
-            </a>
+            </button>
           </div>
 
           {/* Ikon Sosial Media */}

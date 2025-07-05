@@ -7,9 +7,7 @@ import { DataProvider } from './contexts/DataContext';
 import LoginPage from './pages/LoginPage';
 import { SignUp } from './assets/components/Auth/SignUp';
 
-
-
-import SekolahDashboard from './pages/sekolah/SekolahDashboard';
+import { Dashboard } from './pages/sekolah/Dashboard';
 import OrangTuaDashboard from './pages/orangtua/OrangTuaDashboard';
 import DokterDashboard from './pages/dokter/DokterDashboard';
 
@@ -76,7 +74,7 @@ function AuthRoutesWrapper() {
         path="/dashboard/sekolah"
         element={
           <ProtectedRoute allowedRole="sekolah">
-            <SekolahDashboard />
+            <Dashboard />
           </ProtectedRoute>
         }
       />
