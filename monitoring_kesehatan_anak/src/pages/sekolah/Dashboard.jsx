@@ -5,7 +5,7 @@ import { Button } from '../../assets/components/UI/Button';
 import { useData } from '../../contexts/DataContext';
 import { Users, Heart, Stethoscope, Calendar, TrendingUp, Activity, CheckCircle, BarChart3, Search, } from 'lucide-react';
 
-export const Dashboard = ({ onNavigate }) => {
+export const Dashboard = ({ onNavigate = () => {} }) => {
   const { students, healthRecords, doctors, parents } = useData();
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState({ title: '', data: [], searchTerm: '' });

@@ -8,17 +8,45 @@ import LoginPage from './pages/LoginPage';
 import { SignUp } from './assets/components/Auth/SignUp';
 
 import { Dashboard } from './pages/sekolah/Dashboard';
-import OrangTuaDashboard from './pages/orangtua/OrangTuaDashboard';
-import DokterDashboard from './pages/dokter/DokterDashboard';
-
 import { Students } from './pages/sekolah/Students';
 import { Parents } from './pages/orangtua/Parents';
 import { Profile } from './pages/sekolah/Profile';
 import { FAQ } from './pages/sekolah/FAQ';
 
+import OrangTuaDashboard from './pages/orangtua/OrangTuaDashboard';
+import DokterDashboard from './pages/dokter/DokterDashboard';
 import { Doctors } from './pages/dokter/Doctors';
 import { HealthRecords } from './pages/dokter/HealthRecords';
+
 import ProtectedRoute from './routes/ProtectedRoute';
+import { Layout } from './assets/components/Layout/Layouts';
+
+
+function SekolahRoutes() {
+  const [activeItem, setActiveItem] = useState('dashboard');
+
+  const renderComponent = () => {
+    switch (activeItem) {
+      case 'students':
+        return <Students />;
+      case 'parents':
+        return <Parents />;
+      case 'profile':
+        return <Profile />;
+      case 'faq':
+        return <FAQ />;
+      case 'dashboard':
+      default:
+        return <Dashboard onNavigate={setActiveItem} />;
+    }
+  };
+
+  return (
+    <Layout activeItem={activeItem} onItemClick={setActiveItem}>
+      {renderComponent()}
+    </Layout>
+  );
+}
 
 function AuthRoutesWrapper() {
   const { isAuthenticated, signUp } = useAuth();
@@ -50,7 +78,7 @@ function AuthRoutesWrapper() {
 
   return (
     <Routes>
-      {/* Login / Signup */}
+      {/* Login / SignUp */}
       <Route
         path="/login"
         element={
@@ -81,7 +109,7 @@ function AuthRoutesWrapper() {
         path="/dashboard/sekolah"
         element={
           <ProtectedRoute allowedRole="sekolah">
-            <Dashboard />
+            <SekolahRoutes />
           </ProtectedRoute>
         }
       />
@@ -98,40 +126,6 @@ function AuthRoutesWrapper() {
         element={
           <ProtectedRoute allowedRole="dokter">
             <DokterDashboard />
-          </ProtectedRoute>
-        }
-      />
-
-      {/* Sekolah internal pages */}
-      <Route
-        path="/sekolah/siswa"
-        element={
-          <ProtectedRoute allowedRole="sekolah">
-            <Students />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/sekolah/orangtua"
-        element={
-          <ProtectedRoute allowedRole="sekolah">
-            <Parents />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/sekolah/profile"
-        element={
-          <ProtectedRoute allowedRole="sekolah">
-            <Profile />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/sekolah/faq"
-        element={
-          <ProtectedRoute allowedRole="sekolah">
-            <FAQ />
           </ProtectedRoute>
         }
       />
