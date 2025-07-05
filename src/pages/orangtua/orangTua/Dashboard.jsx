@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import dataMedis from '../../data/medis.json';
-import Sidebar from '../../components/Sidebar';
-import Navbar from '../../components/navbar';
-import ProfileDrawer from '../../components/Profil'; 
+import dataMedis from '../../../data/medis.json';
+import Sidebar from '../../../components/Sidebar';
+import Navbar from '../../../components/navbar';
+import ProfileDrawer from '../../../components/Profil'; 
 
 
 const Dashboard = () => {
