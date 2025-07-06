@@ -14,6 +14,7 @@ import Layout from './layout/Layout'; // <-- BARIS INI YANG MEMPERBAIKI ERROR
 import DokterDashboard from './pages/dokter/Dokter/DokterDashboard';
 import DataAntropometri from './pages/dokter/Dokter/DataAntropometri';
 import DetailAntropometri from './pages/dokter/Dokter/DetailAntropometri';
+import TambahAntropometri from './pages/dokter/Dokter/TambahAntropometri';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -69,6 +70,7 @@ function App() {
           }
         />
         <Route path="/data-antropometri/:id" element={<DetailAntropometri />} />
+        <Route path="/data-antropometri/tambah" element={<TambahAntropometri />} />
         
         {/* Fallback jika route tidak cocok */}
         <Route path="*" element={<Navigate to="/" replace />} />
