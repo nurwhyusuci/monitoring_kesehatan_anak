@@ -125,11 +125,11 @@ export const Dashboard = ({ onNavigate = () => {} }) => {
     <div className="space-y-6">
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">DASHBOARD</h1>
-<<<<<<< Updated upstream
+ Updated upstream
         <p className="text-gray-600">Selamat datang di Sistem Monitoring Kesehatan anak MKA</p>
 =======
         <p className="text-gray-600">Selamat datang di Monitoring Kesehatan Anak MKA</p>
->>>>>>> Stashed changes
+ Stashed changes
       </div>
 
       {/* Enhanced Stats Cards with Different Designs */}
