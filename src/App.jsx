@@ -68,6 +68,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/data-antropometri/:id" element={<DetailAntropometri />} />
         
         {/* Fallback jika route tidak cocok */}
         <Route path="*" element={<Navigate to="/" replace />} />
