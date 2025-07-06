@@ -34,9 +34,9 @@ function SekolahRoutes() {
         return <Profile />;
       case 'faq':
         return <FAQ />;
-      case 'health': // ✅ Tambahkan ini
+      case 'health': 
         return <HealthRecords />;
-      case 'doctors': // ✅ Tambahkan ini
+      case 'doctors': 
         return <Doctors />;
       case 'dashboard':
       default:
