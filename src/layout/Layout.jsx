@@ -1,6 +1,10 @@
+// File: src/layout/Layout.jsx
+
 import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import doctorImage from '../assets/images/doctor.png';
+// --- PERBAIKAN DI SINI ---
+// Nama file diimpor dengan huruf kecil 's' agar sesuai dengan nama file di disk.
+import Sidebar from '../components/sidebar'; 
+import doctorImage from '../assets/images/doctor.png'; // Pastikan path & nama file ini benar
 import { useNavigate } from 'react-router-dom';
 
 const Layout = ({ children }) => {
@@ -8,7 +12,9 @@ const Layout = ({ children }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn');
+    // Sebaiknya hapus juga item 'user' yang kita gunakan di App.jsx
+    localStorage.removeItem('user'); 
+    localStorage.removeItem('isLoggedIn'); // Tetap hapus ini jika masih digunakan
     navigate('/login');
   };
 

@@ -1,17 +1,24 @@
+// File: App.jsx
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
+// Impor komponen halaman umum
 import LoginPage from './pages/LoginPage';
 import SekolahDashboard from './pages/sekolah/SekolahDashboard';
 import OrangTuaDashboard from './pages/orangtua/orangTua/Dashboard';
-import DokterDashboard from './pages/dokter/Dokter/DokterDashboard';
 import ProtectedRoute from './routes/ProtectedRoute';
+
+// --- INI SOLUSINYA: TAMBAHKAN BLOK IMPOR INI ---
+// Impor Layout dan semua halaman dokter yang akan kita gunakan
+import Layout from './layout/Layout'; // <-- BARIS INI YANG MEMPERBAIKI ERROR
+import DokterDashboard from './pages/dokter/Dokter/DokterDashboard';
+import DataAntropometri from './pages/dokter/Dokter/DataAntropometri';
+import DetailAntropometri from './pages/dokter/Dokter/DetailAntropometri';
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Logout otomatis setiap kali aplikasi pertama kali dimuat
     localStorage.removeItem('user');
     setUser(null);
   }, []);
@@ -22,60 +29,46 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Root redirect ke login atau dashboard */}
-        <Route
-          path="/"
-          element={
-            storedUser ? (
-              <Navigate to={`/dashboard/${role}`} replace />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          }
-        />
+        {/* Rute-rute dasar */}
+        <Route path="/" element={storedUser ? <Navigate to={`/dashboard/${role}`} replace /> : <Navigate to="/login" replace />} />
+        <Route path="/login" element={storedUser ? <Navigate to={`/dashboard/${role}`} replace /> : <LoginPage />} />
+        
+        {/* Rute-rute yang tidak menggunakan Layout utama dokter */}
+        <Route path="/dashboard/sekolah" element={<ProtectedRoute allowedRole="sekolah"><SekolahDashboard /></ProtectedRoute>} />
+        <Route path="/dashboard/orangtua" element={<ProtectedRoute allowedRole="orangtua"><OrangTuaDashboard /></ProtectedRoute>} />
 
-        {/* Login Page */}
-        <Route
-          path="/login"
-          element={
-            storedUser ? (
-              <Navigate to={`/dashboard/${role}`} replace />
-            ) : (
-              <LoginPage />
-            )
-          }
-        />
-
-        {/* Dashboard Sekolah */}
-        <Route
-          path="/dashboard/sekolah"
-          element={
-            <ProtectedRoute allowedRole="sekolah">
-              <SekolahDashboard />
-            </ProtectedRoute>
-          }
-        />
-
-        {/* Dashboard Orang Tua */}
-        <Route
-          path="/dashboard/orangtua"
-          element={
-            <ProtectedRoute allowedRole="orangtua">
-              <OrangTuaDashboard />
-            </ProtectedRoute>
-          }
-        />
-
-        {/* Dashboard Dokter */}
+        
         <Route
           path="/dashboard/dokter"
           element={
             <ProtectedRoute allowedRole="dokter">
-              <DokterDashboard />
+              <Layout>
+                <DokterDashboard />
+              </Layout>
             </ProtectedRoute>
           }
         />
-
+        <Route
+          path="/data-antropometri"
+          element={
+            <ProtectedRoute allowedRole="dokter">
+              <Layout>
+                <DataAntropometri />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/data-antropometri/:id"
+          element={
+            <ProtectedRoute allowedRole="dokter">
+              <Layout>
+                <DetailAntropometri />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        
         {/* Fallback jika route tidak cocok */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
