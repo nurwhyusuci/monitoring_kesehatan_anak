@@ -116,7 +116,7 @@ export const DoctorView = ({ doctor, onClose }) => {
           <Calendar size={16} />
           <span>Data terakhir diperbarui: {new Date().toLocaleDateString('id-ID')}</span>
         </div>
-        <p>OMKA Health System - Sistem Manajemen Kesehatan Sekolah</p>
+        <p>MKA Health System - Sistem Manajemen Kesehatan Anak</p>
       </div>
 
       {/* Action Buttons */}
