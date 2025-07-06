@@ -364,7 +364,7 @@ export const Dashboard = ({ onNavigate = () => {} }) => {
             {students.length === 0 ? (
               <div className="text-center py-8">
                 <Users className="mx-auto text-gray-400 mb-2" size={32} />
-                <p className="text-gray-500 text-sm">Belum ada data siswa</p>
+                <p className="text-gray-500 text-sm">BELUM ADA DATA SISWA</p>
               </div>
             ) : (
               students.slice(-5).reverse().map((student) => (
