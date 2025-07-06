@@ -1,0 +1,137 @@
+[
+  {
+    "tanggal": "2026-02-18",
+    "pemeriksa": "Dr. Ani Wijaya",
+    "status": "Sehat",
+    "ringkasan": "Pemeriksaan kesehatan menyeluruh, semua normal.",
+    "berat": 22,
+    "tinggi": 112,
+    "kepala": 49.5
+  },
+  {
+    "tanggal": "2025-12-05",
+    "pemeriksa": "Dr. Hasan",
+    "status": "Perlu Perhatian",
+    "ringkasan": "Anak kurang nafsu makan selama musim hujan.",
+    "berat": 21.5,
+    "tinggi": 111,
+    "kepala": 49.3
+  },
+  {
+    "tanggal": "2025-09-22",
+    "pemeriksa": "Dr. Siti Aminah",
+    "status": "Sehat",
+    "ringkasan": "Pemeriksaan rutin menjelang tahun ajaran baru.",
+    "berat": 21,
+    "tinggi": 110,
+    "kepala": 49.2
+  },
+  {
+    "tanggal": "2025-06-15",
+    "pemeriksa": "Dr. Budi Santoso",
+    "status": "Sehat",
+    "ringkasan": "Imunisasi booster, anak aktif dan ceria.",
+    "berat": 20,
+    "tinggi": 109,
+    "kepala": 49
+  },
+  {
+    "tanggal": "2025-03-10",
+    "pemeriksa": "Dr. Ani Wijaya",
+    "status": "Sehat",
+    "ringkasan": "Pemeriksaan pra-sekolah, semua parameter normal.",
+    "berat": 19.5,
+    "tinggi": 108,
+    "kepala": 48.7
+  },
+  {
+    "tanggal": "2025-01-20",
+    "pemeriksa": "Dr. Hasan",
+    "status": "Gizi Baik",
+    "ringkasan": "Berat badan mulai membaik setelah program nutrisi.",
+    "berat": 19,
+    "tinggi": 107,
+    "kepala": 48.5
+  },
+  {
+    "tanggal": "2024-11-05",
+    "pemeriksa": "Dr. Siti Aminah",
+    "status": "Perlu Perhatian",
+    "ringkasan": "Batuk pilek ringan, diberikan obat simptomatik.",
+    "berat": 18.5,
+    "tinggi": 106,
+    "kepala": 48.3
+  },
+  {
+    "tanggal": "2024-08-22",
+    "pemeriksa": "Dr. Budi Santoso",
+    "status": "Sehat",
+    "ringkasan": "Pemeriksaan rutin, perkembangan sesuai usia.",
+    "berat": 18,
+    "tinggi": 105,
+    "kepala": 48.2
+  },
+  {
+    "tanggal": "2024-05-15",
+    "pemeriksa": "Dr. Ani Wijaya",
+    "status": "Sehat",
+    "ringkasan": "Imunisasi campak dan rubella.",
+    "berat": 17.5,
+    "tinggi": 104,
+    "kepala": 48
+  },
+  {
+    "tanggal": "2024-02-10",
+    "pemeriksa": "Dr. Hasan",
+    "status": "Gizi Kurang",
+    "ringkasan": "Perlu peningkatan asupan gizi, diberikan susu formula tambahan.",
+    "berat": 16.5,
+    "tinggi": 103,
+    "kepala": 47.7
+  },
+  {
+    "tanggal": "2023-12-18",
+    "pemeriksa": "Dr. Siti Aminah",
+    "status": "Sehat",
+    "ringkasan": "Pemeriksaan akhir tahun, perkembangan normal.",
+    "berat": 17,
+    "tinggi": 102,
+    "kepala": 47.5
+  },
+  {
+    "tanggal": "2023-09-05",
+    "pemeriksa": "Dr. Ani Wijaya",
+    "status": "Perlu Perhatian",
+    "ringkasan": "Demam ringan, diberikan vitamin penambah nafsu makan.",
+    "berat": 16,
+    "tinggi": 100,
+    "kepala": 47.2
+  },
+  {
+    "tanggal": "2023-07-10",
+    "pemeriksa": "Dr. Hasan",
+    "status": "Gizi Kurang",
+    "ringkasan": "Berat badan kurang dari standar, diberikan saran nutrisi.",
+    "berat": 15.5,
+    "tinggi": 99,
+    "kepala": 47
+  },
+  {
+    "tanggal": "2023-04-22",
+    "pemeriksa": "Dr. Budi Santoso",
+    "status": "Sehat",
+    "ringkasan": "Imunisasi DPT-HB-Hib dosis 3",
+    "berat": 16,
+    "tinggi": 97,
+    "kepala": 46.5
+  },
+  {
+    "tanggal": "2023-01-15",
+    "pemeriksa": "Dr. Siti Aminah",
+    "status": "Sehat",
+    "ringkasan": "Pemeriksaan rutin, anak dalam kondisi sehat.",
+    "berat": 15,
+    "tinggi": 95,
+    "kepala": 46
+  }
+]

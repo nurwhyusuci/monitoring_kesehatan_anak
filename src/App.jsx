@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import LoginPage from './pages/LoginPage';
 import SekolahDashboard from './pages/sekolah/SekolahDashboard';
-import OrangTuaDashboard from './pages/orangtua/orangTua/Dashboard';
 import DokterDashboard from './pages/dokter/Dokter/DokterDashboard';
+
+import OrangTuaDashboard from './pages/orangtua/orangTua/Dashboard';
+import DetailKesehatan from './pages/orangtua/orangTua/DetailKesehatan';
+import CatatanDokter from './pages/orangtua/orangTua/CatatanDokter';
+import DataMedisAnak from './pages/orangtua/orangTua/DataMedisAnak';
+import DataAnak from './pages/orangtua/orangTua/DataAnak';
+
+import OrangTuaLayout from './layouts/OrangTuaLayout';
 import ProtectedRoute from './routes/ProtectedRoute';
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    // Logout otomatis setiap kali aplikasi pertama kali dimuat
-    localStorage.removeItem('user');
-    setUser(null);
-  }, []);
-
   const storedUser = JSON.parse(localStorage.getItem('user'));
   const role = storedUser?.role;
 
   return (
     <Router>
       <Routes>
-        {/* Root redirect ke login atau dashboard */}
+        {/* Redirect root ke dashboard atau login */}
         <Route
           path="/"
           element={
@@ -34,7 +33,7 @@ function App() {
           }
         />
 
-        {/* Login Page */}
+        {/* Login */}
         <Route
           path="/login"
           element={
@@ -56,16 +55,6 @@ function App() {
           }
         />
 
-        {/* Dashboard Orang Tua */}
-        <Route
-          path="/dashboard/orangtua"
-          element={
-            <ProtectedRoute allowedRole="orangtua">
-              <OrangTuaDashboard />
-            </ProtectedRoute>
-          }
-        />
-
         {/* Dashboard Dokter */}
         <Route
           path="/dashboard/dokter"
@@ -76,7 +65,23 @@ function App() {
           }
         />
 
-        {/* Fallback jika route tidak cocok */}
+        {/* Layout & Route Orang Tua */}
+        <Route
+          path="/dashboard/orangtua"
+          element={
+            <ProtectedRoute allowedRole="orangtua">
+              <OrangTuaLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<OrangTuaDashboard />} />
+          <Route path="detail-kesehatan" element={<DetailKesehatan />} />
+          <Route path="data-medis-anak" element={<DataMedisAnak />} />
+          <Route path="data-anak" element={<DataAnak />} />
+          <Route path="catatan-dokter" element={<CatatanDokter />} />
+        </Route>
+
+        {/* Fallback route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
