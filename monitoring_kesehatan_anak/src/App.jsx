@@ -21,7 +21,6 @@ import { HealthRecords } from './pages/dokter/HealthRecords';
 import ProtectedRoute from './routes/ProtectedRoute';
 import { Layout } from './assets/components/Layout/Layouts';
 
-
 function SekolahRoutes() {
   const [activeItem, setActiveItem] = useState('dashboard');
 
@@ -35,6 +34,10 @@ function SekolahRoutes() {
         return <Profile />;
       case 'faq':
         return <FAQ />;
+      case 'health': // ✅ Tambahkan ini
+        return <HealthRecords />;
+      case 'doctors': // ✅ Tambahkan ini
+        return <Doctors />;
       case 'dashboard':
       default:
         return <Dashboard onNavigate={setActiveItem} />;
