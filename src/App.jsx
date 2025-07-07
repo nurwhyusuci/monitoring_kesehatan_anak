@@ -16,7 +16,7 @@ import Dashboard from './pages/dokter/Dokter/Dashboard';
 import FormSaranDokter from './pages/dokter/Dokter/FormSaranDokter';
 import InformasiDokter from './pages/dokter/Dokter/InformasiDokter'; // Menambahkan import untuk InformasiDokter
 import DetailDokter from './pages/dokter/Dokter/DetailDokter'; // Menambahkan import untuk DetailDokter
-
+import TambahAntropometri from './pages/dokter/Dokter/TambahAntropometri';
 // Halaman Tambah Catatan Dokter
 import TambahCatatanDokter from './pages/dokter/Dokter/TambahCatatanDokter'; // Menambahkan import untuk TambahCatatanDokter
 import CatatanDokter from './pages/dokter/Dokter/CatatanDokter';
@@ -234,6 +234,17 @@ function App() {
               </Layout>
             </ProtectedRoute>
           }
+        />
+
+        <Route 
+        path="/data-antropometri/tambah" 
+        element={
+          <ProtectedRoute allowedRole="dokter">
+            <Layout>
+              <TambahAntropometri />
+            </Layout>
+            </ProtectedRoute>
+        }
         />
 
       
