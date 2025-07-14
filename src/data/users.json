@@ -1,0 +1,18 @@
+[
+    {
+      "email": "ortu1@gmail.com",
+      "password": "123456",
+      "role": "orangtua"
+    },
+    {
+      "email": "dokter1@gmail.com",
+      "password": "abc123",
+      "role": "dokter"
+    },
+    {
+      "email": "sekolah1@gmail.com",
+      "password": "pass123",
+      "role": "sekolah"
+    }
+  ]
+  

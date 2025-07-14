@@ -1,0 +1,24 @@
+[
+  {
+    "nama": "Alya Putri",
+    "tanggal": "2025-06-15",
+    "pemeriksa": "Dr. Hasan",
+    "suhu": "36.8",
+    "berat": "22.5",
+    "tinggi": "115",
+    "ringkasan": "Pertumbuhan normal sesuai usia.",
+    "catatan_dokter": "Teruskan pola makan sehat dan pantau berat badan.",
+    "selesai": false
+  },
+  {
+    "nama": "Rafi Hidayat",
+    "tanggal": "2025-06-20",
+    "pemeriksa": "Dr. Vino",
+    "suhu": "37.1",
+    "berat": "20.1",
+    "tinggi": "110",
+    "ringkasan": "Sedikit kekurangan berat badan.",
+    "catatan_dokter": "Tambahkan asupan protein dan perbanyak istirahat.",
+    "selesai": true
+  }
+]

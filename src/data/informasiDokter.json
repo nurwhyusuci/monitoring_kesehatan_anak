@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Intan Maharani",
+    "specialization": "Dokter Anak",
+    "hospital": "RS Permata Bunda",
+    "since": "2015",
+    "image": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "intan.maharani@hospital.com",
+    "phone": "0812-3456-7890",
+    "experience": "8 tahun",
+    "education": "Universitas Indonesia"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Bima Putra",
+    "specialization": "Dokter Anak",
+    "hospital": "RS Harapan Sehat",
+    "since": "2018",
+    "image": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "bima.putra@hospital.com",
+    "phone": "0821-4567-1234",
+    "experience": "5 tahun",
+    "education": "Universitas Gadjah Mada"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Aulia Lestari",
+    "specialization": "Dokter Spesialis Tumbuh Kembang",
+    "hospital": "RS Kasih Ibu",
+    "since": "2012",
+    "image": "https://randomuser.me/api/portraits/women/65.jpg",
+    "email": "aulia.lestari@hospital.com",
+    "phone": "0857-8899-3322",
+    "experience": "11 tahun",
+    "education": "Universitas Airlangga"
+  }
+]
